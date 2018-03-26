@@ -26,7 +26,7 @@ var multi = function(num){
 	return res;
 };
 
-var pow = Math.pow(multi(33721), 3);
+var pow = multi(33721) ** 3;
 console.log(multi(33721));
 console.log(pow);
 

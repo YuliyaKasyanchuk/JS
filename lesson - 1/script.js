@@ -8,10 +8,7 @@ var mainList = {
 		pensils: 'Pensils',
 		notebooks: 'Note Books'
 	},
-	employers: {
-		employer1: 'John Smith',
-		employer2: 'Lisa Tomas'
-	},
+	employers: ['John Smith', 'Lisa Fox'],
 	open: true
 
 

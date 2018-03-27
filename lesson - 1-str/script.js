@@ -4,8 +4,8 @@ var arr = [];
 // var multi = function(num){
 // 	var res = 1;
 // 	while(num){
-// 		res *= num%10;
-// 		num = Math.floor(num/10);
+		// res *= num%10;
+		// num = Math.floor(num/10);
 // 	}
 
 // 	return res;

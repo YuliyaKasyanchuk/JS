@@ -1,14 +1,14 @@
 window.addEventListener('DOMContentLoaded', function(){
 
 let week = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-let currentDay = 'вт';
-
+let currentDay = new Date();
 for(let i = 0; i < week.length; i++){
+ 
 
 	if(week[i] ==='сб' || week[i] === 'вс'){
 		document.write('<b>'+ week[i]+'</b>' + '<br>');
 	}
-	else if(week[i] === currentDay){
+	else if( (i+1) === currentDay.getDay()){
 		document.write('<em>'+ week[i]+'</em>' + '<br>');
 	}
 	else{
@@ -16,7 +16,6 @@ for(let i = 0; i < week.length; i++){
 	}
 	
 }
-
 
 });
 

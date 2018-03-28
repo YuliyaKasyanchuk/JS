@@ -94,7 +94,7 @@ function hireEmployers(){
 console.log(hireEmployers());
 
 console.log (mainList.employers);
-summ = start(summ);
+summ = start(summ); 
 chooseGoods();
 console.log('Ваш бюджет на день ' + calcSummForDay(summ));
 calcDiscount(200);

@@ -83,15 +83,17 @@ function hireEmployers(){
 
 	for(let i = 0; i < 4; i++){
 		askEmployer = prompt('Имя сотрудника');
-		mainList.employers.number = i;
-		mainList.employers.name = askEmployer;
-		console.log(mainList.employers.number + ' - ' + mainList.employers.name);
+		mainList.employers[i] = (i+1) + ' - ' + askEmployer;
+		console.log (mainList.employers);
+		
 	}
 	return mainList;
 	
 
 }
 console.log(hireEmployers());
+
+console.log (mainList.employers);
 summ = start(summ);
 chooseGoods();
 console.log('Ваш бюджет на день ' + calcSummForDay(summ));

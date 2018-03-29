@@ -18,7 +18,7 @@ var mainList = {
 	 	  for (var i = 0; i < 3; i++){
 		var answer = prompt('Какой тип товаров будем продавать?', '');
 
-			if((typeof(answer)) === 'string' && (typeof(answer)) !== null && answer !== '' && answer.length < 50 && answer.search(/\d/) === -1){
+			if((typeof(answer)) === 'string' && (typeof(answer)) !== null && answer !== '' && answer.length < 50 || answer.search(/\d/) === -1 ){
 				console.log('Все верно');
 				mainList.shopGoods[i] = answer;
 				
@@ -75,7 +75,7 @@ var mainList = {
 		do{
 			items = prompt('Перечислите через запятую ваши товары', '');
 		
-		} while( items === null ||  items.search(/\d/) !== -1  ||  items === '')
+		} while( items === null ||  items.search(/\d/) !== -1  ||  items === '' || items.search(/[^\a-zA-ZА-яА-Я\,]/g) !== -1 )
 
 		mainList.shopItems = items.split(',');
 		mainList.shopItems.push(prompt('Подождите еще', ''));

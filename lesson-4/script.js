@@ -82,9 +82,9 @@ var mainList = {
 		mainList.shopItems.sort();
 		console.log(mainList.shopItems);
 
-
+		console.log('У нас вы можете купить: ');
 		mainList.shopItems.forEach(function(item, i, items){
-			console.log('У нас вы можете купить: ' + mainList.goodsNumeration(i) +' - '+ item);
+			console.log(mainList.goodsNumeration(i) +' - '+ item);
 		});
 
 		
@@ -96,13 +96,18 @@ var mainList = {
 
 };
 
+	console.log('Наш магазин включает в себя: ');
+ 	for (key in mainList){
+
+ 		console.log(key);
+ 	}
 
  mainList.chooseShopItems();
  console.log(mainList);
+ // console.log('Наш магазин включает в себя: ' + output())
 
- for (key in mainList){
- 	console.log('Наш магазин включает в себя: ' + key);
- }
+
+
 
 
 

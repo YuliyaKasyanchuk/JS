@@ -9,10 +9,10 @@ let str = 'урок-3-был слишком легким',
 
 str = str.slice(0,1).toUpperCase() + str.slice(1);
 str = str.replace(/\-/g , ' ');
-index = str.indexOf('легким');
+// index = str.indexOf('легким');
 
-substr = str.substring(index);
-substr = substr.replace('им', 'oo');
+substr = str;
+substr = substr.replace(' слишком ', ' ').replace('был', 'было').replace('им', 'o');
 console.log(substr);
 console.log(str);
 

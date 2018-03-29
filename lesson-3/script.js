@@ -7,7 +7,9 @@ var mainList = {
 	summ: summ,
 	shopTitle: title,
 	shopGoods: [],
-	employers: {},
+	employers: {
+		name: []
+	},
 	open: true,
 	discount: true
 
@@ -79,21 +81,19 @@ function calcDiscount(price){
 
 }
 
-function hireEmployers(){
+function askEmployersName(){
 
 	for(let i = 0; i < 4; i++){
 		askEmployer = prompt('Имя сотрудника');
-		mainList.employers[i] = (i+1) + ' - ' + askEmployer;
-		console.log (mainList.employers);
-		
+		mainList.employers.name[i] = (i+1) + ' - ' + askEmployer;
 	}
-	return mainList;
-	
+	console.log (mainList.employers.name);
+	// return mainList;
+
 
 }
-console.log(hireEmployers());
+askEmployersName();
 
-console.log (mainList.employers);
 summ = start(summ); 
 chooseGoods();
 console.log('Ваш бюджет на день ' + calcSummForDay(summ));

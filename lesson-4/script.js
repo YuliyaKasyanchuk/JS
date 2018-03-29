@@ -84,7 +84,7 @@ var mainList = {
 
 		console.log('У нас вы можете купить: ');
 		mainList.shopItems.forEach(function(item, i, items){
-			console.log(mainList.goodsNumeration(i) +' - '+ item);
+			console.log(mainList.goodsNumeration(i) +' - '+ item); 
 		});
 
 		

@@ -12,14 +12,15 @@ window.addEventListener('DOMContentLoaded', function(){
 		question = prompt('Ваше отношение к техники apple?');
 
 		// МЕНЮ
-	menu.replaceChild(menuItem[2], menuItem[1]);
+	// menu.replaceChild(menuItem[2], menuItem[1]);
 	newMenuItem.classList.add('menu-item');
 	newMenuItem.innerHTML = 'Пятый пункт';
 	menu.insertBefore(newMenuItem, menuItem[4]);
-	newMenuItem2.innerHTML = 'Третий пункт';
-	newMenuItem2.classList.add('menu-item');
-	menu.insertBefore(newMenuItem2, menuItem[2]);
-	
+	// newMenuItem2.innerHTML = 'Третий пункт';
+	// newMenuItem2.classList.add('menu-item');
+	// menu.insertBefore(newMenuItem2, menuItem[2]);
+	let pointThree = menu.removeChild(menuItem[1]);
+	menu.insertBefore(pointThree, menuItem[2]);
 
 		// ФОН
 	document.body.style.background = 'url(../img/apple_true.jpg)';

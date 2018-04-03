@@ -36,26 +36,41 @@ open.addEventListener('click', () => {
 
 
 goods_btn.addEventListener('click', () => {
+	let vegetables = 'овощи',
+		fruits = 'фрукты';
+		
 	for (let i = 0; i < goodsItem.length; i++){
-		let answer = goodsItem[i].value,
-		    disc = 0;
+		let answer = goodsItem[i].value;
 
 		if((typeof(answer)) === 'string' && (typeof(answer)) !== null && answer.length < 50 || answer.search(/\d/) === -1 ){
 			console.log('Все верно');
 			mainList.shopGoods[i] = answer;
+			
+			    let disc = 0;
 			goodsValue.textContent = mainList.shopGoods;
-			if(answer === 'овощи' || answer === 'фрукты'){
+			if(goodsValue.textContent.match(fruits) && goodsValue.textContent.match(vegetables)){
+				discountValue.style.backgroundColor = 'green';
+					
+			
+					mainList.discount = true;
+					alert('У вас скидка на ' + fruits + ' и '+ vegetables + ' - 20%');
+					disc = price*20/100;
+					// console.log('Старая цена ' + price + ' рубл');
+					// console.log('Скидка ' + disc + ' рубл');
+					// console.log('Новая цена ' + (price-disc)  + ' рубл');
+
+			}
+			else if(answer === 'фрукты'  || answer === 'овощи'){
 				discountValue.style.backgroundColor = 'green';
 					
 			
 					mainList.discount = true;
 					alert('У вас скидка на ' + answer + ' - 20%');
 					disc = price*20/100;
-					console.log('Старая цена ' + price + ' рубл');
-					console.log('Скидка ' + disc + ' рубл');
-					console.log('Новая цена ' + (price-disc)  + ' рубл');
-				
-					return price;
+					// console.log('Старая цена ' + price + ' рубл');
+					// console.log('Скидка ' + disc + ' рубл');
+					// console.log('Новая цена ' + (price-disc)  + ' рубл');
+
 				}
 			
 		}
@@ -65,6 +80,9 @@ goods_btn.addEventListener('click', () => {
 		}
 
 	}
+	
+	
+	
 });
 
 

@@ -30,9 +30,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
     function show() {
         newButton.style.opacity++;
-        clearInterval(id);
+        // clearInterval(id);
     }
 
+let str = 'Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум. Программа «Антистресс» сначала убирает последствия стресса на физическом уровне, потом помогает избавиться от негативных и навязчивых мыслей';
+    let i = 0;
 
     function change() {
 
@@ -48,7 +50,9 @@ let timeOut;
     newButton.addEventListener('click', change);
 
     function step() {
+
         timeOut = setTimeout(function() {
+
             requestAnimationFrame(step);
             i++;
 
@@ -57,19 +61,21 @@ let timeOut;
             text.style.color = 'orange';
             text.textContent = str.substr(0, i);
         }, 100);
-
+       
     };
 
     function stop() {
       clearTimeout(timeOut);
+      i=0;
+      text.style.opacity = "0";
+
     }
-    let str = 'Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум. Программа «Антистресс» сначала убирает последствия стресса на физическом уровне, потом помогает избавиться от негативных и навязчивых мыслей';
-    let i = 0;
+    
    
     // newButton.addEventListener('click',change);
 
 
-
+// TABS
 
     let tab = document.getElementsByClassName('info-header-tab'),
         tabContent = document.getElementsByClassName('info-tabcontent'),

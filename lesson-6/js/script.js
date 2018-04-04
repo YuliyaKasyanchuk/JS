@@ -42,13 +42,22 @@ goods_btn.addEventListener('click', () => {
 	for (let i = 0; i < goodsItem.length; i++){
 		let answer = goodsItem[i].value;
 
-		if((typeof(answer)) === 'string' && (typeof(answer)) !== null && answer.length < 50 || answer.search(/\d/) === -1 ){
+		if(((typeof(answer)) === 'string') && (typeof(answer)) !== null && answer.length < 50 || answer.search(/\d/) === -1 ){
 			console.log('Все верно');
 			mainList.shopGoods[i] = answer;
 			
 			    let disc = 0;
 			goodsValue.textContent = mainList.shopGoods;
-			if(goodsValue.textContent.match(fruits) && goodsValue.textContent.match(vegetables)){
+			
+			
+		}
+		else{
+			console.log('Вы ввели некорректные данные!', '');
+			break;
+		}
+
+	}
+	if(goodsValue.textContent.match(fruits) && goodsValue.textContent.match(vegetables)){
 				discountValue.style.backgroundColor = 'green';
 					
 			
@@ -60,26 +69,29 @@ goods_btn.addEventListener('click', () => {
 					// console.log('Новая цена ' + (price-disc)  + ' рубл');
 
 			}
-			else if(answer === 'фрукты'  || answer === 'овощи'){
+			else if(goodsValue.textContent.match(fruits)){
 				discountValue.style.backgroundColor = 'green';
 					
 			
 					mainList.discount = true;
-					alert('У вас скидка на ' + answer + ' - 20%');
+					alert('У вас скидка на ' + fruits + ' - 20%');
 					disc = price*20/100;
 					// console.log('Старая цена ' + price + ' рубл');
 					// console.log('Скидка ' + disc + ' рубл');
 					// console.log('Новая цена ' + (price-disc)  + ' рубл');
 
 				}
+				else if(goodsValue.textContent.match(vegetables)){
+						discountValue.style.backgroundColor = 'green';
+					
 			
-		}
-		else{
-			console.log('Вы ввели некорректные данные!', '');
-			break;
-		}
-
-	}
+					mainList.discount = true;
+					alert('У вас скидка на ' + vegetables + ' - 20%');
+					disc = price*20/100;
+					// console.log('Старая цена ' + price + ' рубл');
+					// console.log('Скидка ' + disc + ' рубл');
+					// console.log('Новая цена ' + (price-disc)  + ' рубл');
+				}
 	
 	
 	

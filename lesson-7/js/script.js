@@ -32,24 +32,46 @@ let mainBlock = document.getElementsByClassName('main-block')[0];
 		newButton.style.opacity ++;
 		clearInterval(id);
 	}
-  	setTimeout(show, 1000);
+
+	function change(){
+
+		if(newButton.innerHTML === 'НАЖМИ НА МЕНЯ!!!'){
+			newButton.innerHTML = 'Удалить текст';
+			step();
+		}
+			
+		else {
+			newButton.innerHTML = 'НАЖМИ НА МЕНЯ!!!';
+				stop();
+
+		}
+	}
+
+
+	newButton.addEventListener('click',change);
+
+
 
   	let str = 'Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум. Программа «Антистресс» сначала убирает последствия стресса на физическом уровне, потом помогает избавиться от негативных и навязчивых мыслей';
 	let i=0;
 
-	function step() {
+	function step () {
 		 	
 		setTimeout(function(){
-		requestAnimationFrame(step);
-		i++;
-		text.style.border = "none";
-		text.style.opacity = "1";
-		text.style.color = 'orange';
-		text.textContent = str.substr(0,i);
+			requestAnimationFrame(step);
+			i++;
+			text.style.border = "none";
+			text.style.opacity = "1";
+			text.style.color = 'orange';
+			text.textContent = str.substr(0,i);
 	}, 100);
 	
 	};
-	newButton.addEventListener('click', step);	
+
+	function stop() {
+		text.value = "";
+	}
+	
 		
 	
 	let tab = document.getElementsByClassName('info-header-tab'),

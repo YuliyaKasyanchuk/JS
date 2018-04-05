@@ -3,54 +3,7 @@ let mainBlock = document.getElementsByClassName('main-block')[0],
 	menu = document.getElementsByTagName('nav')[0],
 	content = document.getElementsByClassName('content')[0];
 
-// TYPING TEXT
-	let newButton = document.createElement('button'),
-		text = document.createElement('textarea');
-		text.classList.add('text-container');
 
-	mainBlock.appendChild(newButton);
-	mainBlock.appendChild(text);
-	
-	text.style.width = "100%";
-	text.style.height = '70px';
-	text.style.backgroundColor = 'transparent';
-	text.style.color = "orange";
-	text.style.opacity = "0";
-	newButton.style.width = '200px';
-	newButton.style.height = '50px';
-	newButton.style.marginTop = '20px';
-	newButton.style.marginBottom  = '20px';
-	newButton.style.backgroundColor = 'orange';
-	newButton.style.сolor = 'white';
-	newButton.style.opacity = '0';
-	newButton.innerHTML = 'НАЖМИ НА МЕНЯ!!!';
-	
-	let textValue = text.value;
-		
-	let id = setTimeout(show, 1000);
-	function show(){
-		newButton.style.opacity ++;
-		clearInterval(id);
-	}
-  	setTimeout(show, 1000);
-
-  	let str = 'Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум. Программа «Антистресс» сначала убирает последствия стресса на физическом уровне, потом помогает избавиться от негативных и навязчивых мыслей';
-	let i=0;
-
-	function step() {
-		 	
-		setTimeout(function(){
-		requestAnimationFrame(step);
-		i++;
-		text.style.border = "none";
-		text.style.opacity = "1";
-		text.style.color = 'orange';
-		text.textContent = str.substr(0,i);
-	}, 100);
-	
-	};
-
-	newButton.addEventListener('click', step);	
 		
 	// TABS
 	let tab = document.getElementsByClassName('info-header-tab'),
@@ -137,20 +90,22 @@ let mainBlock = document.getElementsByClassName('main-block')[0],
 
 
 	// SCROLL
-
+// let menu = document.getElementsByTagName('nav')[0];
+console.log(menu)
 	menu.addEventListener('click', (event) =>{
 		event.preventDefault();
-		let target = event.target.getAttribute('href');
-	
-		for(let i = 0; i<target.length; i++){
-			if(target[0] === '#'){
-				target[0].replaceWith('');
-			}
-			target[0] += '';
-			console.log(target[i])
+		let target = event.target;
+		if(target.tagName = 'li'){
+			console.log(target.tagName);
+		 var w = window.pageYOffset;
 		}
-
 	});
+
+	// 	// linkNav = document.querySelectorAll('[href^="#"]');
+	// 	window.scrollTo(0,200);
+	// 	console.log(w);
+
+	// });
 	
 // 	menu.addEventListener('click', (event) =>{
 // 		event.preventDefault();

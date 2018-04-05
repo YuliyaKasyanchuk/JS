@@ -80,9 +80,9 @@ let mainBlock = document.getElementsByClassName('main-block')[0],
 
 				}
 			}
-
+			let timeInterval = setInterval(updateClock, 1000); 
 			updateClock();
-			let timeInterval = setInterval(updateClock, 1000);
+			
 	}
 
 	setClock('timer', deadline);
@@ -90,16 +90,33 @@ let mainBlock = document.getElementsByClassName('main-block')[0],
 
 
 	// SCROLL
+
+// 	function animate(draw,duration){
+// 		let start = Date.now();
+// 		duration = duration || 1000;
+// 		requestAnimationFrame(function animate(time){
+// 			let timePassed = Date.now(); - start;
+// 			if(timePassed > duration){
+// 				timePassed = duration;
+// 				console.log(timePassed)
+// 			}
+// 			if(timePassed < duration){
+// 				requestAnimationFrame(animate);
+// 			}
+// 		});
+	
+// 	};
+
 // let menu = document.getElementsByTagName('nav')[0];
-console.log(menu)
-	menu.addEventListener('click', (event) =>{
-		event.preventDefault();
-		let target = event.target;
-		if(target.tagName = 'li'){
-			console.log(target.tagName);
-		 var w = window.pageYOffset;
-		}
-	});
+// console.log(menu)
+// 	menu.addEventListener('click', (event) =>{
+// 		event.preventDefault();
+// 		let target = event.target;
+// 		if(target.tagName = 'li'){
+// 			console.log(target.tagName);
+// 		 var w = window.pageYOffset;
+// 		}
+// 	});
 
 	// 	// linkNav = document.querySelectorAll('[href^="#"]');
 	// 	window.scrollTo(0,200);

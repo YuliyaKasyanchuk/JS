@@ -7,35 +7,96 @@
   -webkit-animation-duration: 2.5s;
 }
 @-webkit-keyframes fade {
-  from {
+  0% {
     opacity: 0.1;
+    visibility: hidden;
   }
-  to {
+  100% {
     opacity: 1;
+    visibility: visible;
   }
 }
 @keyframes fade {
-  from {
+0% {
     opacity: 0.1;
+    visibility: hidden;
   }
-  to {
+  100% {
     opacity: 1;
+    visibility: visible;
   }
 }
-.appear{
-   -webkit-animation-name: appear;
-          animation-name: appear;
-  -webkit-animation-duration: 1.7s;
-          animation-duration: 1.7s;
-          transition: all 3s;
-
+.scaleUp {
+  -webkit-animation-name: scaleUp;
+          animation-name: scaleUp;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-name: scaleUp;
+  -webkit-animation-duration: 2.5s;
 }
-.disappear{
-   -webkit-animation-name: disappear;
-          animation-name: disappear;
+@-webkit-keyframes scaleUp {
+  0% {
+    transform: scale(0);
+    visibility: hidden;
+  }
+  100% {
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+@keyframes scaleUp {
+0% {
+    transform: scale(0);
+    visibility: hidden;
+  }
+  100% {
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+.scaleDown {
+  -webkit-animation-name: scaleDown;
+          animation-name: scaleDown;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-name: scaleDown;
+  -webkit-animation-duration: 2.5s;
+}
+@-webkit-keyframes scaleDown {
+  0% {
+    transform: scale(1);
+    visibility: hidden;
+  }
+  100% {
+    transform: scale(0);
+    visibility: visible;
+  }
+}
+@keyframes scaleDown {
+0% {
+    transform: scale(1);
+    visibility: hidden;
+  }
+  100% {
+    transform: scale(0);
+    visibility: visible;
+  }
+}
+.fadeIn{
+   -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
   -webkit-animation-duration: 1.7s;
           animation-duration: 1.7s;
           transition: all 3s;
+}
+.fadeOut{
+    -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: 2.5s;
+
 }
 .more-splash {
   -webkit-animation-name: splash;
@@ -43,29 +104,39 @@
   -webkit-animation-duration: 1.7s;
           animation-duration: 1.7s;
 }
-@keyframes appear {
+@keyframes fadeIn {
   0% {
-        transform: scale(.5);
-        left: 25%;
-    }
-        100% {
-        transform: scale(1);
-        left: 50%;
-        transform: translateX(-50%);
+        transform: scale(0);
+        transform-origin: inherit;
 
-       
+     }
+
+    100% {
+        transform: scale(1);
+        transform-origin: inherit;
     }
  
 }
-@keyframes disappear {
-  
-        100% {
-        transform: scale(0);
-    }
-    0%{
-      display: none;
-    }
-
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+ 
+}
+@-webkit-keyframes fadeOut  {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 @-webkit-keyframes splash {
   from {
@@ -655,9 +726,11 @@ header ul li:before {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 3;
+   -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
 .overlay .popup {
-  position: fixed;
+  position: fixed; 
   z-index: 4;
   left: 50%;
   top: 150px;

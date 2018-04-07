@@ -142,23 +142,19 @@ window.addEventListener('DOMContentLoaded', function() {
         overlay = document.querySelector('.overlay'),
         close = document.querySelector('.popup-close'),
         popup = document.querySelector('.popup'),
-        flag = 0,
         description = document.getElementsByClassName('description-btn');
 
         overlay.style.transform = "translate(-350%)";
 
 
     more.addEventListener('click', function() {
-        flag = 1;
-        overlay.style.display = 'block';
+        // // overlay.style.display = 'block';
         overlay.style.transform = "translate(0%)";
-        overlay.style.backgroundColor = 'red';
-        overlay.classList.remove('fadeOut');
-        overlay.classList.add('fade');
-        console.log(1)
+        // overlay.classList.remove('fadeOut');
+        this.classList.add('more-splash');
+        overlay.style.transition = 'all .5s';
+        overlay.style.backgroundColor = 'rgba(0,0,0,.8)';
         document.body.style.overflow = 'hidden';
-        
-        console.log(flag);
 
 
 
@@ -166,51 +162,26 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     for (let i = 0; i < description.length; i++) {
         description[i].addEventListener('click', function() {
-            flag = 0;
+            this.classList.add = 'more-splash';
             overlay.style.transform = "translate(0%)";
-            overlay.style.display = 'block';
-            overlay.classList.remove('fade');
-            overlay.style.backgroundColor = 'green';
-            overlay.classList.add('scaleUp');
-            
-            console.log(flag);
+            document.body.style.overflow = 'hidden';
+            overlay.style.transition = 'all 1s';
+            overlay.style.backgroundColor = 'rgba(0,0,0,.2)';
         });
 
     }
 
-    close.addEventListener('click', function() {
-        if (flag === 1) {
-            overlay.classList.remove('fade');
-            overlay.classList.add('fadeOut');
-            document.body.style.overflow = '';
-            console.log(2);
-            setTimeout(function() {
-            overlay.style.display = 'none';
-            }, 1200);
-        } else {
-
-            overlay.classList.remove('scaleUp');
-            overlay.classList.remove('fadeOut');
-            overlay.classList.add('scaleDown');
-
-            document.body.style.overflow = '';
-            console.log(3);
-            setTimeout(function() {
-            overlay.style.display = 'none';
-            }, 2000);
-
-
-
-        }
+    description[0].addEventListener('click', function(){
+        overlay.style.transition = 'all 1s';
+        overlay.style.backgroundColor = 'rgba(0,0,0,.9)';
     });
 
-
-
-
-
-
-
-
+    close.addEventListener('click', function() {
+         overlay.style.transform = "translate(-350%)";
+          overlay.style.backgroundColor = 'rgba(0,0,0,.5)';
+          overlay.classList.remove('splash');
+          document.body.style.overflow = '';
+           });
 
 
 });

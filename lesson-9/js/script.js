@@ -185,7 +185,7 @@ window.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
             console.log(2);
             setTimeout(function() {
-                overlay.style.display = 'none';
+            overlay.style.display = 'none';
             }, 1200);
         } else {
 
@@ -196,7 +196,7 @@ window.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
             console.log(3);
             setTimeout(function() {
-                overlay.style.display = 'none';
+            overlay.style.display = 'none';
             }, 2000);
 
 

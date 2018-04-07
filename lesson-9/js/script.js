@@ -145,14 +145,19 @@ window.addEventListener('DOMContentLoaded', function() {
         flag = 0,
         description = document.getElementsByClassName('description-btn');
 
-    console.log(close);
+        overlay.style.transform = "translate(-350%)";
+
+
     more.addEventListener('click', function() {
+        flag = 1;
         overlay.style.display = 'block';
+        overlay.style.transform = "translate(0%)";
+        overlay.style.backgroundColor = 'red';
         overlay.classList.remove('fadeOut');
         overlay.classList.add('fade');
         console.log(1)
         document.body.style.overflow = 'hidden';
-        flag = 1;
+        
         console.log(flag);
 
 
@@ -161,10 +166,13 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     for (let i = 0; i < description.length; i++) {
         description[i].addEventListener('click', function() {
+            flag = 0;
+            overlay.style.transform = "translate(0%)";
             overlay.style.display = 'block';
             overlay.classList.remove('fade');
+            overlay.style.backgroundColor = 'green';
             overlay.classList.add('scaleUp');
-            flag = 0;
+            
             console.log(flag);
         });
 
@@ -184,8 +192,9 @@ window.addEventListener('DOMContentLoaded', function() {
             overlay.classList.remove('scaleUp');
             overlay.classList.remove('fadeOut');
             overlay.classList.add('scaleDown');
+
             document.body.style.overflow = '';
-            console.log(2);
+            console.log(3);
             setTimeout(function() {
                 overlay.style.display = 'none';
             }, 2000);

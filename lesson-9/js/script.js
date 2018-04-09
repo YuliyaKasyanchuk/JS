@@ -138,23 +138,106 @@ window.addEventListener('DOMContentLoaded', function() {
 
     //MODAL
 
-    let more = document.querySelector('.more'),
+    // let more = document.querySelector('.more'),
+    //     overlay = document.querySelector('.overlay'),
+    //     close = document.querySelector('.popup-close'),
+    //     popup = document.querySelector('.popup'),
+    //     description = document.getElementsByClassName('description-btn'),
+    //     flag = false;
+
+    //     // overlay.style.transform = "translate(-350%)";
+
+
+    // more.addEventListener('click', function() {
+    //     overlay.style.display = 'block';
+    //     // overlay.style.transform = "translate(0%)";
+    //     overlay.classList.remove('fadeOut');
+    //     overlay.classList.add('fade');
+    //     // this.classList.add('more-splash');
+    //     // overlay.style.transition = 'all .5s';
+    //     // overlay.style.backgroundColor = 'rgba(0,0,0,.8)';
+    //     document.body.style.overflow = 'hidden';
+    //     flag = false;
+
+
+
+
+    // });
+    // for (let i = 0; i < description.length; i++) {
+    //     description[i].addEventListener('click', function() {
+    //         // this.classList.add = 'more-splash';
+    //         // overlay.style.transform = "translate(0%)";
+    //         document.body.style.overflow = 'hidden';
+    //         overlay.style.display = 'block';
+    //         overlay.classList.add('scaleUp');
+    //         // overlay.style.transition = 'all 1s';
+    //         // overlay.style.backgroundColor = 'rgba(0,0,0,.2)';
+    //         flag = true;
+    //     });
+
+    // }
+
+    // // description[0].addEventListener('click', function(){
+    // //     overlay.style.transition = 'all 1s';
+    // //     overlay.style.backgroundColor = 'rgba(0,0,0,.9)';
+    // // });
+
+
+    // close.addEventListener('click', function() {
+    //      document.body.style.overflow = '';
+    //     if(flag === false){
+    //         overlay.classList.remove('fade');
+    //             overlay.classList.add('fadeOut');
+    //             setTimeout(function(){
+    //                 overlay.style.display = 'none';
+    //        },2000);
+
+    //     }
+    //     else{
+            
+    //             overlay.classList.remove('scaleUp');
+    //             overlay.classList.add('scaleDown');
+    //             setTimeout(function(){
+    //                 overlay.style.display = 'none';
+    //        },2000);
+    //     }
+    //      // overlay.style.transform = "translate(-350%)";
+    //       // overlay.style.backgroundColor = 'rgba(0,0,0,.5)';
+    //       // overlay.classList.remove('splash');
+         
+    //        });
+
+
+
+    //      // overlay.style.transform = "translate(-350%)";
+    //       // overlay.style.backgroundColor = 'rgba(0,0,0,.5)';
+    //       // overlay.classList.remove('splash');
+         
+  
+     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
         close = document.querySelector('.popup-close'),
         popup = document.querySelector('.popup'),
-        description = document.getElementsByClassName('description-btn');
+        description = document.getElementsByClassName('description-btn'),
+        flag = 2;
 
-        overlay.style.transform = "translate(-350%)";
+        // overlay.style.transform = "translate(-350%)";
 
 
     more.addEventListener('click', function() {
-        // // overlay.style.display = 'block';
-        overlay.style.transform = "translate(0%)";
-        // overlay.classList.remove('fadeOut');
-        this.classList.add('more-splash');
-        overlay.style.transition = 'all .5s';
-        overlay.style.backgroundColor = 'rgba(0,0,0,.8)';
+        flag = 0;
+        console.log(flag)
+        overlay.style.display = 'block';
+        // overlay.style.transform = "translate(0%)";
+        overlay.classList.remove('scaleUp');
+        overlay.classList.remove('fadeOut');
+        overlay.classList.remove('scaleDown');
+        overlay.classList.add('fade');
+        // this.classList.add('more-splash');
+        // overlay.style.transition = 'all .5s';
+        // overlay.style.backgroundColor = 'rgba(0,0,0,.8)';
         document.body.style.overflow = 'hidden';
+       
 
 
 
@@ -162,26 +245,67 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     for (let i = 0; i < description.length; i++) {
         description[i].addEventListener('click', function() {
-            this.classList.add = 'more-splash';
-            overlay.style.transform = "translate(0%)";
+            // this.classList.add = 'more-splash';
+            // overlay.style.transform = "translate(0%)";
+            flag = 1;
+            console.log(flag)
             document.body.style.overflow = 'hidden';
-            overlay.style.transition = 'all 1s';
-            overlay.style.backgroundColor = 'rgba(0,0,0,.2)';
+            overlay.style.display = 'block';
+            overlay.classList.remove('fade');
+            overlay.classList.remove('fadeOut');
+            overlay.classList.remove('scaleDown');
+            overlay.classList.add('scaleUp');
+
+            // overlay.style.transition = 'all 1s';
+            // overlay.style.backgroundColor = 'rgba(0,0,0,.2)';
+            
         });
 
     }
 
-    description[0].addEventListener('click', function(){
-        overlay.style.transition = 'all 1s';
-        overlay.style.backgroundColor = 'rgba(0,0,0,.9)';
-    });
+    // description[0].addEventListener('click', function(){
+    //     overlay.style.transition = 'all 1s';
+    //     overlay.style.backgroundColor = 'rgba(0,0,0,.9)';
+    // });
+
 
     close.addEventListener('click', function() {
-         overlay.style.transform = "translate(-350%)";
-          overlay.style.backgroundColor = 'rgba(0,0,0,.5)';
-          overlay.classList.remove('splash');
-          document.body.style.overflow = '';
+         document.body.style.overflow = '';
+         console.log(flag)
+        if(flag < 1){
+            overlay.classList.remove('fade');
+            overlay.classList.remove('scaleDown');
+            overlay.classList.remove('scaleUp');
+            overlay.classList.add('fadeOut');
+                setTimeout(function(){
+                    overlay.style.display = 'none';
+           },2000);
+
+        }
+        else{
+                overlay.classList.remove('fade');
+                overlay.classList.remove('scaleDown');
+                overlay.classList.remove('scaleUp');
+                overlay.classList.add('scaleDown');
+                setTimeout(function(){
+                    overlay.style.display = 'none';
+           },2000);
+        }
+         // overlay.style.transform = "translate(-350%)";
+          // overlay.style.backgroundColor = 'rgba(0,0,0,.5)';
+          // overlay.classList.remove('splash');
+         
            });
 
+
+
+         // overlay.style.transform = "translate(-350%)";
+          // overlay.style.backgroundColor = 'rgba(0,0,0,.5)';
+          // overlay.classList.remove('splash');
+         
+  
+
+
+    
 
 });

@@ -42,16 +42,11 @@ $(document).ready(function($) {
 
 			$('.form-inline').find('input').val('');
 			$('.form-inline').find('textarea').val('');
-			$('.form-inline').find('checkbox').val('');
+			$('input[type=checkbox]').prop('checked', false);
 			 
             $('.modal').trigger('reset');
             $('.thanks').fadeIn();
            
-          
-           
-           
-
-
 			$('.overlay').animate({
 			 	opacity: 'toggle',
 			 	display: 'none'
@@ -72,6 +67,7 @@ $(document).ready(function($) {
 
 
 $('.overlay').css('display', 'none');
+
 
 $('.back').on('click', function(){
 		  $('.thanks').fadeOut();

@@ -1,5 +1,6 @@
 $(document).ready(function($) {
 	$('.modal').css('margin-top','-100%');
+	$('.modal').css('margin-left','-100%');
 	 
 
 
@@ -9,7 +10,8 @@ $(document).ready(function($) {
 		 }, 1000);
 		 $('.modal').animate({
 		    opacity: 'toggle',
-		    marginTop: '100px'
+		    marginTop: '100px',
+		    marginLeft: '25%'
 		 },1000);
 	});
 
@@ -20,7 +22,8 @@ $(document).ready(function($) {
 		 }, 1000);
 		 $('.modal').animate({
 		    opacity: 'toggle',
-		    marginTop: '-100%'
+		    marginTop: '-100%',
+		     marginLeft: '-100%'
 		 	
 		 },1000);
 	});
@@ -42,14 +45,10 @@ $(document).ready(function($) {
 			$('.form-inline').find('checkbox').val('');
 			 
             $('.modal').trigger('reset');
+            $('.thanks').fadeIn();
            
-            $('.modal').append('<p class="colored">Спасибо за заявку! Скоро мы с вами свяжемся!!!!</p>');
-            $('.colored').css('color', 'red');
           
-           function deleteP(){
-           	$('.modal').find('.colored').remove();
-           }
-            setTimeout(deleteP,2000);
+           
            
 
 
@@ -64,7 +63,7 @@ $(document).ready(function($) {
 			    height: 'toggle'
 
 			 	
-			 },4000);
+			 },1000);
 			
         });
         return false;
@@ -73,6 +72,10 @@ $(document).ready(function($) {
 
 
 $('.overlay').css('display', 'none');
+
+$('.back').on('click', function(){
+		  $('.thanks').fadeOut();
+	});
 
 
      

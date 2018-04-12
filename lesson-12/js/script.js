@@ -3,7 +3,7 @@ $(document).ready(function($) {
 	 
 
 
-	$('.main_btna').on('click', function(){
+	$('.main_btna, .main_btn, nav li:eq(1)').on('click', function(){
 		 $('.overlay').animate({
 		 	opacity: 'toggle'
 		 }, 1000);
@@ -25,25 +25,4 @@ $(document).ready(function($) {
 		 },1000);
 	});
 
-
-$('.main_btn').on('click', function(){
-		 $('.overlay').animate({
-		 	opacity: 'toggle'
-		 }, 1000);
-		 $('.modal').animate({
-		    opacity: 'toggle',
-		    marginTop: '100px'
-		 },1000);
-	});
-
-	$('nav li:eq(1)').on('click', function(){
-		$('.overlay').animate({
-		 	opacity: 'toggle'
-		 }, 1000);
-		 $('.modal').animate({
-		    opacity: 'toggle',
-		    marginTop: '100px'
-		 },1000);
-	});
-	
 });	

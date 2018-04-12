@@ -1,27 +1,16 @@
 $(document).ready(function($) {
-		    
-	 $('.modal').css('margin-left','-100%');
-	 $('.modal').css('margin-top','-100%');
+	$('.modal').css('margin-top','-100%');
+	 
 
 
-	$('.main_btna').on('click', function(){
+	$('.main_btna, .main_btn, nav li:eq(1)').on('click', function(){
 		 $('.overlay').animate({
 		 	opacity: 'toggle'
 		 }, 1000);
 		 $('.modal').animate({
 		    opacity: 'toggle',
-		    marginLeft: '25%',
-		    marginTop: '50px',
-		    height: 'toggle'
-		},
-		{
-	    duration: 2000, 
-	    specialEasing: {
-	      opacity: 'linear',
-	      height: 'swing'
-    	}
-  		});
-
+		    marginTop: '100px'
+		 },1000);
 	});
 
 	$('.close').on('click', function(){
@@ -31,43 +20,8 @@ $(document).ready(function($) {
 		 }, 1000);
 		 $('.modal').animate({
 		    opacity: 'toggle',
-		    marginLeft: '-100%',
-		    marginTop: '-100%',
-		    height: 'toggle'
-
+		    marginTop: '-100%'
 		 	
-		 },1000);
-	});
-
-
-$('.main_btn').on('click', function(){
-		 $('.overlay').animate({
-		 	opacity: 'toggle'
-		 }, 1000);
-		 $('.modal').animate({
-		    opacity: 'toggle',
-		    marginLeft: '25%',
-		    marginTop: '50px',
-		    height: 'toggle'
-		},
-		{
-	    duration: 2000, 
-	    specialEasing: {
-	      opacity: 'swing',
-	      height: 'linear'
-    	}
-  		});
-	});
-
-
-	$('nav li:eq(1)').on('click', function(){
-		$('.overlay').animate({
-		 	opacity: 'toggle'
-		 }, 1000);
-		 $('.modal').animate({
-		    opacity: 'toggle',
-		    marginLeft: '25%',
-		    marginTop: '50px'
 		 },1000);
 	});
 
@@ -89,7 +43,7 @@ $('.main_btn').on('click', function(){
 			 
             $('.modal').trigger('reset');
            
-            	 $('.modal').append('<p class="colored">Спасибо за заявку! Скоро мы с вами свяжемся!!!!</p>');
+            $('.modal').append('<p class="colored">Спасибо за заявку! Скоро мы с вами свяжемся!!!!</p>');
             $('.colored').css('color', 'red');
           
            function deleteP(){

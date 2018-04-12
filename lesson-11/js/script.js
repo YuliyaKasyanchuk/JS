@@ -390,7 +390,7 @@ let form = document.getElementsByClassName('main-form')[0],
     //AJAX
 
 
- let contactFormData;
+ let contactFormData = '';
     for(let i = 0; i < contactInput.length; i++){
         contactFormData += contactInput[i].value + ' ';
         console.log(contactFormData);
